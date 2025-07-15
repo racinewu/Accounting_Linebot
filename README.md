@@ -25,7 +25,8 @@ Built with Google Apps Script, no need for a separate server
 1. 註冊一個 [Linebot](https://developers.line.biz/en/) 帳號
 2. 在自己的雲端硬碟中建立一個試算表，開啟兩個工作表  
 `工作表1` A, B, C 3個 column 格式設定成純文字，D, E 設定成數值
-![sheet1](image-17.png)
+
+<img width="1081" height="636" alt="Image" src="https://github.com/user-attachments/assets/03b80d16-07d1-41f5-b949-fd64cf093684" /> 
 
 `工作表2`B1, C1, E1 ~ E3 可以自己輸入，A2 ~ A4 的月份不用寫，程式會自己抓  
 F1, F2 填入公式(會在試算表內做一些簡單運算)
@@ -35,9 +36,9 @@ F2 = sumif('工作表1'!B:B, "User1付錢", '工作表1'!E:E)
 F3 = F2 - F1
 ```
 
-![sheet2](image-18.png)
+<img width="1397" height="296" alt="Image" src="https://github.com/user-attachments/assets/9fa50aa3-3dde-4ed8-a760-d25a4754c2c6" />
 
-3. 建立一個 Google App Script 專案 (建議把專案跟試算表放在同一個資料夾裡，後續有新增的檔案也可以放一起方便管理)
+1. 建立一個 Google App Script 專案 (建議把專案跟試算表放在同一個資料夾裡，後續有新增的檔案也可以放一起方便管理)
 
 ## How to deploy
 
@@ -53,29 +54,29 @@ var sheet_url = 'https://docs.google.com/spreadsheets/...'
 
 2. 左邊服務要添加 sheets v4，點選 App Script 網頁的部署按鈕，選擇「新增佈署作業」
 
-![Add a new deployment job](image-1.png)
+<img width="1767" height="833" alt="Image" src="https://github.com/user-attachments/assets/9c8bc722-4bec-4452-bbdb-0fe801bc2e32" />
 
 3. 種類設定為「網路應用程式」，將存取權限改為「所有人」，再按部署
 
-![web application](image-13.png)
-
+<img width="750" height="572" alt="Image" src="https://github.com/user-attachments/assets/6d1ad5bd-e4c1-4ee0-a317-47ee24dfcba3" />
 
 4. 接著瀏覽器會出現小視窗，點按「授予存取權」：
 
-![authorization1](image-4.png)
+<img width="935" height="410" alt="Image" src="https://github.com/user-attachments/assets/7e01b5c0-94ab-47e6-8736-6c52a348b8dc" />
 
 5. 選取 Google 帳號後，點選左下小灰字「顯示進階設定」，並點選左下方的「前往 ***」( 此為正常流程 )
 
-![authorization2](image-14.png)
+<img width="616" height="423" alt="Image" src="https://github.com/user-attachments/assets/9aa4efff-c7a1-4be3-b8f2-19db9d0a44ee" />
 
 6. 點選允許：
 
-![allow](image-15.png)
+<img width="432" height="622" alt="Image" src="https://github.com/user-attachments/assets/3f9225d2-9e6e-4d3c-84ec-642b262bd7ce" />
 
 7. 將下面的網址複製起來，貼到你的 LINE Bot Console -> Messaging API 的 Webhook(底下的Use webhook記得打開)
 
-![webhook URL](image-19.png)
-![line webhook](image-16.png)
+<img width="1108" height="241" alt="Image" src="https://github.com/user-attachments/assets/eb79e144-fba0-4091-a975-33e8be7c0848" />
+
+<img width="1502" height="256" alt="Image" src="https://github.com/user-attachments/assets/93514a1f-1d37-474b-9bc2-9bf82269e481" />
 
 > **第一次需要全部流程都做一次，之後如果有更新程式只需要重做一次 2 & 7 就好。**
 
@@ -84,27 +85,27 @@ var sheet_url = 'https://docs.google.com/spreadsheets/...'
 
 附上我自己使用的選單。
 
-![menu](image-20.png)
+<img width="779" height="633" alt="Image" src="https://github.com/user-attachments/assets/629d6bf5-6fc2-44d6-b017-3422c0f618d3" />
 
 - `User1 / User2付錢`: 在圖文選單中點選誰付錢，輸入`品項 User1金額 User2金額` (兩兩中間都要空一格，沒空會跳錯誤)
 
-![paying](image-8.png)
+<img width="908" height="481" alt="Image" src="https://github.com/user-attachments/assets/3a69a6fa-e94b-4ba5-a88d-4b6679a94762" />
 
 - `小結`: 列出尚未結算的所有品項與暫時結餘金額
 
-![temp balance](image-9.png)
+<img width="903" height="575" alt="Image" src="https://github.com/user-attachments/assets/c9d5a999-de5a-43b6-9846-c61ef1354b21" />
 
 - `帳務結餘`: 輸出截至當下的結餘金額，並且清空消費記錄 (工作表1會清空，但工作表2每月的消費分析會留著)
 
-![final balance](image-10.png)
+<img width="906" height="248" alt="Image" src="https://github.com/user-attachments/assets/459acde0-6922-4548-99c3-dff898984540" />
 
 - `刪除上筆`: 不小心打錯可以刪除上筆 (會同步處理消費分析)
 
-![delete last](image-11.png)
+<img width="906" height="206" alt="Image" src="https://github.com/user-attachments/assets/282bbed3-2773-4435-bf78-4af861321394" />
 
 - `消費分析`: 輸入月份 (保留近3個月) 輸出雙方消費金額
 
-![analyze](image-12.png)
+<img width="910" height="576" alt="Image" src="https://github.com/user-attachments/assets/bdc2f5c4-c55e-46b4-a545-552e4ff6da42" />
 
 > **<p.s.> 如果全部設定完但執行結果錯誤，很有可能是試算表內儲存格的數值格式錯誤。**
 
