@@ -2,7 +2,7 @@
 > _AB制分錢小幫手_
 
 和另一半或朋友一起出門時，通常是其中一人先付款，等到要結帳時才發現很難記得細項；或是雙方輪流付款，也不容易計算誰欠誰多少。  
-為了解決這個問題，我設計了這個 LINE 機器人，能夠即時記帳、輕鬆查詢明細與結算金額，還能簡單統計最近三個月的花費狀況。雙方都只需要加入這個Linebot好友就可以直接使用。
+為了解決這個問題，我設計了這個 LINE 機器人，能夠即時記帳、輕鬆查詢明細與結算金額，還能簡單統計最近三個月的花費狀況。雙方都只需要加入這個 Linebot 好友就可以直接使用。
 
 When going out with a partner or friend, it's common for one person to pay first. Later, when it’s time to settle up, it can be hard to recall the exact details. Alternating payments also makes it tricky to track who owes whom.  
 To solve this, I built a LINE bot that helps with real-time expense tracking, makes it easy to review spending records and calculate balances, and even summarizes the past three months of shared expenses. Both users simply need to add the bot as a LINE friend to start using it.
@@ -23,7 +23,8 @@ Built with Google Apps Script, no need for a separate server
 ## Prerequisite
 
 1. 註冊一個 [Linebot](https://developers.line.biz/en/) 帳號
-2. 在自己的雲端硬碟中建立一個試算表，開啟兩個工作表  
+2. 在自己的雲端硬碟中建立一個試算表，開啟兩個工作表
+
 `工作表1` A, B, C 3個 column 格式設定成純文字，D, E 設定成數值
 
 <img width="1081" height="636" alt="Image" src="https://github.com/user-attachments/assets/03b80d16-07d1-41f5-b949-fd64cf093684" /> 
@@ -38,7 +39,7 @@ F3 = F2 - F1
 
 <img width="1397" height="296" alt="Image" src="https://github.com/user-attachments/assets/9fa50aa3-3dde-4ed8-a760-d25a4754c2c6" />
 
-1. 建立一個 Google App Script 專案 (建議把專案跟試算表放在同一個資料夾裡，後續有新增的檔案也可以放一起方便管理)
+3. 建立一個 Google App Script 專案 (建議把專案跟試算表放在同一個資料夾裡，後續有新增的檔案也可以放一起方便管理)
 
 ## How to deploy
 
