@@ -142,6 +142,6 @@ reply_message = [{
 - [Google App Script 開發文件](https://developers.google.com/apps-script/reference/spreadsheet?hl=zh-tw)
 
 ## Credits
-特別感謝 [jcchang19](https://github.com/jschang19/plusone-linebot) 所開發的原始版本機器人，為本專案提供了極大的靈感與穩固的基礎。
+特別感謝 [jschang19](https://github.com/jschang19/plusone-linebot) 所開發的原始版本機器人，為本專案提供了極大的靈感與穩固的基礎。
 
 Special thanks for the amazing work on the original version of this bot. It provided great inspiration and a strong foundation for this project.
