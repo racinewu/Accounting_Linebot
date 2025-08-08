@@ -115,13 +115,15 @@ function doPost(e) {
       try {
         if (current_list_row === 0) {
           // 首筆資料
-          reserve_list.getRange(1, 1).setValue(current_date);
-          reserve_list.getRange(1, 2).setValue(message);
+          reserve_list.getRange(current_list_row + 1, 1).setValue(current_date);
+          reserve_list.getRange(current_list_row + 1, 2).setValue(message);
+          text = "請輸入品項 User1 User2";
         } else {
           // 如果上筆還沒輸入品項，提醒補上
-          const previous_item = reserve_list.getRange(current_list_row, 3).getValue();
+          let previous_item = reserve_list.getRange(current_list_row, 3).getValue();
           if (previous_item === "") {
-            text = "請先輸入品項";
+            previous_user = reserve_list.getRange(current_list_row, 2).getValue();
+            text = "已輸入過 " + previous_user +"\n請先輸入品項 User1 User2";
           } else {
             reserve_list.getRange(current_list_row + 1, 1).setValue(current_date);
             reserve_list.getRange(current_list_row + 1, 2).setValue(message);
@@ -130,7 +132,7 @@ function doPost(e) {
         }
         reply_message = format_text_message(text);
       } catch {
-        reply_message = format_text_message("發生錯誤2");
+        reply_message = format_text_message("發生錯誤");
       }
       send_to_line();
       break;
